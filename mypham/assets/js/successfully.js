@@ -1,4 +1,6 @@
+//Đoạn mã lắng nghe sự kiện khi tài liệu đã sẵn sàng
 document.addEventListener('DOMContentLoaded', function () {
+   //Khởi tạo biến và gán sự kiện cho các trường nhập liệu
     const signUpButton = document.querySelector('.click_sing_up');
     const togglePassword = document.querySelector('.toggle-password');
     const passwordInput = document.getElementById('passwordInput');
@@ -27,8 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
             this.classList.toggle('fa-eye-slash');
         });
     }
-
-    // Sign up button click event
+// Xử lý sự kiện khi nhấn nút Đăng ký Kiểm tra thông tin: Khi nhấn nút Đăng ký, đoạn mã sẽ kiểm tra xem tất cả các trường thông tin đã được điền đầy đủ và hộp kiểm đã được chọn hay chưa. Nếu không, sẽ hiển thị cảnh báo.
+// Kiểm tra mật khẩu: Sử dụng biểu thức chính quy để kiểm tra mật khẩu phải chứa ít nhất 8 ký tự, bao gồm cả số và chữ cái viết hoa.
+// Kiểm tra tài khoản tồn tại: Gọi hàm accountExists để kiểm tra xem tài khoản hoặc số điện thoại đã tồn tại chưa.
+// Lưu tài khoản mới: Gọi hàm saveAccount để lưu thông tin tài khoản mới vào localStorage.
+// Hiển thị thông báo thành công: Gọi hàm showSuccessPopup để hiển thị thông báo đăng ký thành công.
     if (signUpButton) {
         signUpButton.addEventListener('click', function () {
             const nameInput = document.getElementById('nameInput').value;
@@ -62,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Check if account exists
-       // Check if account exists
+    // Hàm kiểm tra tài khoản tồn tại
+    // Hàm này kiểm tra xem có tài khoản nào trong localStorage trùng với email hoặc số điện thoại được nhập hay không. Nếu có, trả về true, ngược lại trả về false.
     function accountExists(email, phone) {
         for (let i = 0; i < localStorage.length; i++) {
             const key = localStorage.key(i);
@@ -75,25 +80,26 @@ document.addEventListener('DOMContentLoaded', function () {
         return false;
     }
 
-    // Save new account to localStorage
+    //Hàm lưu tài khoản mới
+    // Hàm này lưu thông tin tài khoản mới (bao gồm tên, email, số điện thoại, và mật khẩu) vào localStorage dưới dạng một đối tượng JSON.
     function saveAccount(name, email, phone, password) {
         const account = { name, email, phone, password };
         localStorage.setItem(email, JSON.stringify(account));
     }
 
-    // Show success popup
+    // Hàm hiển thị thông báo thành công
     function showSuccessPopup() {
-        // Check if successPopup already exists
+        // Kiểm tra xem SuccessPopup đã tồn tại chưa
         let successPopup = document.querySelector('.success-popup');
         
         if (!successPopup) {
-            // If it doesn't exist, create and append it to the body
+            // Nếu nó không tồn tại, hãy tạo và gắn nó vào phần thân
             successPopup = document.createElement('div');
             successPopup.classList.add('success-popup');
             document.body.appendChild(successPopup);
         }
 
-        // Update the content of successPopup
+        // Cập nhật nội dung của SuccessPopup
         successPopup.innerHTML = `
             <img src="./assets/picture/login/frane.png" alt="Success">
             <h3>Đăng ký thành công</h3>
@@ -101,11 +107,11 @@ document.addEventListener('DOMContentLoaded', function () {
             <button id="confirmButton" type="button">VỀ TRANG CHỦ</button>
         `;
 
-        // Display successPopup and overlay
+        /// Hiển thị thành côngCửa sổ bật lên và lớp phủ
         successPopup.style.display = 'block';
         overlay.style.display = 'block';
 
-        // Add click event to the confirmation button to redirect to the homepage
+        // Thêm sự kiện click vào nút xác nhận để chuyển hướng về trang chủ
         const confirmButton = successPopup.querySelector('#confirmButton');
         confirmButton.addEventListener('click', function() {
             successPopup.style.display = 'none';

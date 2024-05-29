@@ -3,6 +3,7 @@
 }
 .section_tintuc {
   margin-top: 10%;
+  
 }
 
 .search_tintuc_container {
@@ -150,6 +151,7 @@
 .Cocoon_tienphong {
   width: 100%; /* 556px */
   height: auto; /* 862px */
+  left: 7%;
   
  /* Đặt phần tử này ở vị trí thứ 3 */
 }
@@ -170,13 +172,19 @@
   transition: all 0.3s ease; /* Thêm thuộc tính chuyển đổi mượt mà */
 }
 
-.matna:hover, .thachhoahonh:hover, .Cocoon_tienphong:hover {
+.matna:hover, .thachhoahonh:hover ,#img_plygon:hover {
   box-shadow: 0.4rem 0.5rem 0.4rem 0.5rem #AAAAAA; /* Tạo bóng đổ lớn hơn khi hover */
   transform: translateY(-10px); /* Di chuyển phần tử lên trên */
   transition: all 0.3s ease; /* Thêm thuộc tính chuyển đổi mượt mà */
 }
 
-
+.Cocoon_tienphong:hover{
+  box-shadow: 0.4rem 0.5rem 0.4rem 0.5rem #AAAAAA; /* Tạo bóng đổ lớn hơn khi hover */
+  transform: translateY(10px);
+  
+   /* Di chuyển phần tử lên trên */
+  transition: all 0.3s ease; /* Thêm thuộc tính chuyển đổi mượt mà */
+}
 .thongtin {
   display: flex; /* Cho phép sắp xếp các phần tử ngang */
    
@@ -188,8 +196,24 @@
   margin-bottom: 20%;  /* 50px */
   
   height: auto;
+
+
+}
+#polygon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem; /* Adjust this margin as needed */
+  margin-bottom: 2rem; /* Adjust this margin as needed */
 }
 
+#img_plygon {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  top: 11%;
+}
 
 @media(max-width:1024px){
   .text_title{

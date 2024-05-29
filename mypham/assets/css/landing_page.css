@@ -2,30 +2,46 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8e9cc;
     color: #333;
     margin-top: 10%;
+    text-align: center;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
-    max-width: 1200px;
+    width: 100%;
 }
 
 .section {
     text-align: center;
-    padding: 20px 0;
+}
+.section img{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.section1{
+    text-align: center;
+    margin: auto;
+
 }
 
-.section.yellow {
+.section {
+    width: 100vw;
     background-color: #f8e9cc;
 }
 
 .section.white {
     background-color: #ffffff;
 }
+.text1{
+    padding: 50px;
+    text-align: center;
+}
+.text1 p{
+    width: 50%;
+    background-color: #f8e9cc;
+    margin: auto;
 
+}
 .main-image {
     width: 100%;
     max-width: 800px;
@@ -107,4 +123,31 @@ p {
 /* Thêm khoảng cách tùy chỉnh giữa hình ảnh chính và các hình ảnh phụ */
 .main-image + .sub-images {
     margin-top: 40px; /* Điều chỉnh giá trị này theo nhu cầu của bạn */
+}
+.content-thuanviet{
+    width: 100vw;
+    background-color: #f8e9cc;
+    margin-bottom: 50px;
+}
+.tex2{
+    margin: 50px;
+}
+.cuoi{
+    margin-bottom: 50px;
+}
+.textnl{
+    margin: 50px;
+}
+.textdau{
+    margin: 50px;
+}
+.anhdau {
+    position: relative;
+    z-index: 2;
+    bottom: -40px;
+}
+
+.content-thuanviet {
+    position: relative;
+    z-index: 1;
 }

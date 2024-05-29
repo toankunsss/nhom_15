@@ -118,6 +118,9 @@ document.addEventListener('DOMContentLoaded', function () {
             overlay.style.display = 'none';
             window.location.href = "login.html";
         });
+//         //Tạo thông báo: Kiểm tra xem phần tử thông báo thành công đã tồn tại hay chưa. Nếu chưa, tạo và thêm nó vào tài liệu.
+// Hiển thị thông báo: Cập nhật nội dung của thông báo và hiển thị nó cùng với lớp phủ (overlay).
+// Xử lý sự kiện khi nhấn nút xác nhận: Khi người dùng nhấn nút "VỀ TRANG CHỦ", thông báo sẽ bị ẩn đi và chuyển hướng người dùng đến trang đăng nhập.
     }
 });
 
